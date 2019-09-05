@@ -1,5 +1,6 @@
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   window.addEventListener("load", () =>{
       loadJSON();
@@ -286,8 +287,12 @@ mc3.on("swiperight", function(ev) {
     w = window.innerWidth;
     h = window.innerHeight;
 
+    var d = new Date(year, month, day);
+    wday = weekdays[d.getDay()];
+
     var dateString = year+"-"+addZero(month+1)+"-"+addZero(day);
-    navBox.innerHTML = "<span onClick='backToMonth();'>&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>The "+numberth(day) + " of " + months[month] + "</b>";
+    //navBox.innerHTML = "<span onClick='backToMonth();'>&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>The "+numberth(day) + " of " + months[month] + "</b>";
+    navBox.innerHTML = "<span onClick='backToMonth();'>&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>"+wday + ", " + months[month] + " " + day + "</b>";
     //alert(dateString);
     //bb.innerHTML = months[thisMonth] + " " +  a;
     /*var parser = new DOMParser();
