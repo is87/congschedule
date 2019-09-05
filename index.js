@@ -2,7 +2,7 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
   mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
   window.addEventListener("load", () =>{
-      //loadJSON();
+      loadJSON();
       registerSW();
   });
 
