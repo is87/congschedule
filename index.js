@@ -2,7 +2,14 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
   mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
   window.addEventListener("load", () =>{
-      loadJSON();
+      //loadJSON();
+      fetch('json.txt')
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    console.log(JSON.stringify(myJson));
+  });
       registerSW();
   });
 
