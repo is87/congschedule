@@ -3,21 +3,14 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
 
   window.addEventListener("load", () =>{
       //loadJSON();
-      fetch('json.txt')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(myJson) {
-    console.log(JSON.stringify(myJson));
-  });
       registerSW();
   });
 
   function loadJSON(){
-    var xmlhttp = new XMLHttpRequest();
+    //var xmlhttp = new XMLHttpRequest();
     var url = "json.txt";
   
-    xmlhttp.onreadystatechange = function() {
+    /*xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             data = JSON.parse(this.responseText);
             console.log("Data fetched. Initializing...");
@@ -25,7 +18,17 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
         }
     };
     xmlhttp.open("GET", url, true);
-    xmlhttp.send();
+    xmlhttp.send();*/
+
+    fetch(url)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(myJson) {
+    data = myJson;
+    console.log("Data fetched. Initializing...");
+    init();
+  });
   }
 
 async function registerSW(){
