@@ -1,0 +1,20 @@
+{
+    "short_name": "Schedule",
+    "name": "Congregation Schedule",
+    "icons": [
+      {
+        "src": "icons-128.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "index.html",
+    "background_color": "#ECEAE7",
+    "display": "standalone",
+    "theme_color": "#FD5451"
+  }
