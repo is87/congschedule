@@ -1,6 +1,25 @@
 months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   mon = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
+  window.addEventListener("load", () =>{
+      loadJSON();
+  });
+
+  function loadJSON(){
+    var xmlhttp = new XMLHttpRequest();
+    var url = "json.txt";
+  
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            data = JSON.parse(this.responseText);
+            console.log("Data fetched. Initializing...");
+            init();
+        }
+    };
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+  }
+
 function about(){
   if(document.getElementById("aboutBox").style.display == "none"){
     document.getElementById("aboutBox").style.display = "block";
@@ -117,19 +136,7 @@ function hideSettings(){
     return "";
 }
 
-function loadJSON(){
-  var xmlhttp = new XMLHttpRequest();
-  var url = "json.txt";
 
-  xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          data = JSON.parse(this.responseText);
-          init();
-      }
-  };
-  xmlhttp.open("GET", url, true);
-  xmlhttp.send();
-}
 
   function init(){
     //xml = xmlDatabase;
