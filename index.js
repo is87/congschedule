@@ -3,6 +3,7 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
   weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
   window.addEventListener("load", () =>{
+      console.log("Page loaded...");
       loadJSON();
       registerSW();
   });
