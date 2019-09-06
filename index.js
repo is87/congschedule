@@ -254,11 +254,14 @@ mc3.on("swiperight", function(ev) {
 
       if(x[i].date != scrollDate){
         dd = x[i].date;
+        y1 = dd.substr(0,4);
         m1 = dd.substr(5, 2);
         m1 = subtractZero(m1)-1;
         d1 = dd.substr(8, 2);
         d1 = subtractZero(d1);
-        scheduleBox.innerHTML += "<div id='ddiv"+i+"' style='width:"+window.innerWidth+"px; height: 20px; position:relative; left:-10px; margin-bottom: 10px; background-color: #FFA1A1; color: #fff; box-sizing: border-box; font-weight: bold; line-height:20px; font-size: 16px; overflow:hidden; text-align:center;'>The "+numberth(d1) + " of "+months[m1]+ "</div>";
+        thisDate = new Date(y1, m1, d1);
+        //scheduleBox.innerHTML += "<div id='ddiv"+i+"' style='width:"+window.innerWidth+"px; height: 20px; position:relative; left:-10px; margin-bottom: 10px; background-color: #FFA1A1; color: #fff; box-sizing: border-box; font-weight: bold; line-height:20px; font-size: 16px; overflow:hidden; text-align:center;'>The "+numberth(d1) + " of "+months[m1]+ "</div>";
+        scheduleBox.innerHTML += "<div id='ddiv"+i+"' style='width:"+window.innerWidth+"px; height: 20px; position:relative; left:-10px; margin-bottom: 10px; background-color: #FFA1A1; color: #fff; box-sizing: border-box; font-weight: bold; line-height:20px; font-size: 16px; overflow:hidden; text-align:center;'>"+weekdays[thisDate.getDay()] + ", "+months[m1]+ " " + d1 +"</div>";
         scrollDate = x[i].date;
       }
       todayText = today.getFullYear()+"-"+addZero(today.getMonth()+1)+"-"+addZero(today.getDate());
