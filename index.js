@@ -9,7 +9,8 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
 
   function loadJSON(){
     //var xmlhttp = new XMLHttpRequest();
-    var url = "https://is87.github.io/congschedule/json.txt";
+    //var url = "https://is87.github.io/congschedule/json.txt";
+    var url = "https://is87.github.io/congschedule/db.json";
   
     /*xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
