@@ -13,7 +13,7 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
     var url = "https://is87.github.io/congschedule/db.json";
     if(navigator.onLine){
         url += "?v="+Math.random();
-        setCookie("dbURL", encodeURIComponent(myName), 365);
+        setCookie("dbURL", encodeURIComponent(url), 365);
         alert("Online - Database URL: "+url);
     }else{
         url = decodeURIComponent(getCookie("dbURL"));
