@@ -306,6 +306,7 @@ mc3.on("swiperight", function(ev) {
     var dateString = year+"-"+addZero(month+1)+"-"+addZero(day);
     //navBox.innerHTML = "<span onClick='backToMonth();'>&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>The "+numberth(day) + " of " + months[month] + "</b>";
     navBox.innerHTML = "<span onClick='backToMonth();'>&lt;&lt;&nbsp;&nbsp;&nbsp;&nbsp;</span><b>"+wday + ", " + months[month] + " " + day + "</b>";
+    navBox.innerHTML += " <a style='color:white; text-decoration:none;' href='https://wol.jw.org/en/wol/dt/r1/lp-e/"+year+"/"+(month+1)+"/"+day+"' target='_blank'>&#9432;</a>";
     //alert(dateString);
     //bb.innerHTML = months[thisMonth] + " " +  a;
     /*var parser = new DOMParser();
