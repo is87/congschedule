@@ -11,7 +11,12 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
   function loadJSON(){
     //var xmlhttp = new XMLHttpRequest();
     var url = "https://is87.github.io/congschedule/db.json";
-    if(navigator.onLine)url += "?v="+Math.random();
+    if(navigator.onLine){
+        url += "?v="+Math.random();
+        setCookie("dbURL", encodeURIComponent(myName), 365);
+    }else{
+        url = decodeURIComponent(getCookie("dbURL"));
+    }
     console.log(url);
   
     /*xmlhttp.onreadystatechange = function() {
