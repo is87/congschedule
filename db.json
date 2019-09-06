@@ -24,7 +24,7 @@
 {"date":"2019-09-15","time":"14:00","type":"Weekend Meeting","items":[{"type":"Chairman","name":"Kristoffer Mattsson"},{"type":"Public Talk","name":"Joachim Kähler"},{"type":"Watchtower Study","name":"Richard Lindström","name2":"Isak Ståhl"},{"type":"Sound","name":"Kristoffer Mattsson"},{"type":"Platform","name":"Joachim Kähler"},{"type":"Cleaning","name":"Group 1"}]},
 {"date":"2019-09-19", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
 {"date":"2019-09-21", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-22", "time":"09:40", "type":"Circuit Assembly", "items":[{"type":"Location", "name":"Oulo"}]},
+{"date":"2019-09-22", "time":"09:30", "type":"Circuit Assembly", "items":[{"type":"Location", "name":"Oulo"}]},
 {"date":"2019-09-23", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
 {"date":"2019-09-28", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]}
 ]}
