@@ -55,7 +55,6 @@ async function registerSW(){
 function about(){
   if(document.getElementById("aboutBox").style.display == "none"){
     document.getElementById("aboutBox").style.display = "block";
-    alert("Test");
   }else{
     document.getElementById("aboutBox").style.display = "none";
   }
