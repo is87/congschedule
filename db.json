@@ -20,5 +20,6 @@
 {"date":"2016-09-29", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Isak Ståhl"}]},
 {"date":"2019-09-07", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
 {"date":"2019-09-08","time":"14:00","type":"Weekend Meeting","items":[{"type":"Chairman","name":"Kristoffer Mattsson"},{"type":"Public Talk","name":"Joachim Kähler"},{"type":"Watchtower Study","name":"Richard Lindström","name2":"Isak Ståhl"},{"type":"Sound","name":"Kristoffer Mattsson"},{"type":"Platform","name":"Joachim Kähler"},{"type":"Cleaning","name":"2"}]},
-{"date":"2019-09-14", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]}
+{"date":"2019-09-14", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
+{"date":"2019-09-21", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]}
 ]}
