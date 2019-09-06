@@ -14,8 +14,10 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
     if(navigator.onLine){
         url += "?v="+Math.random();
         setCookie("dbURL", encodeURIComponent(myName), 365);
+        alert("Online - Database URL: "+url);
     }else{
         url = decodeURIComponent(getCookie("dbURL"));
+        alert("Offline - Database URL: "+url);
     }
     console.log(url);
   
