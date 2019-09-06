@@ -343,7 +343,10 @@ mc3.on("swiperight", function(ev) {
     htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; line-height:30px; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
     var items = eventTag.items;
     if(typeof eventTag.group !== 'undefined' && typeof eventTag.location !== 'undefined') htmlString += "<div style='font-size: 12px; color:#333; text-align:center; padding-bottom:10px;'>"+eventTag.group+" - Location: "+eventTag.location+"</div>";
-    htmlString += "<table style='font-size: 12px; width:100%;'><tr><td style='font-weight:bold; color: #000; width: 50%;'>ASSIGNMENT</td><td style='font-weight:bold;color: #000; width: 50%;'>PUBLISHER</td></tr>";
+    htmlString += "<table style='font-size: 12px; width:100%;'>"
+    if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
+        htmlString += "<tr><td style='font-weight:bold; color: #000; width: 50%;'>ASSIGNMENT</td><td style='font-weight:bold;color: #000; width: 50%;'>PUBLISHER</td></tr>";
+    }
     for(j = 0; j < items.length; j++){
       if(items[j].type=="Sound")htmlString += "<tr><td></td><td></td></tr><tr><td colspan='2' style='border-top:1px solid #ccc;'></td></tr>";
       /*if(items[j].getAttribute("type").indexOf("(Householder)") == -1){*/
