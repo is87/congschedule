@@ -16,7 +16,7 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", async e => {
     const req = e.request;
     const url = new URL(req.url);
-
+    console.log(url);
     if(url.origin === location.origin){
         e.respondWith(cacheFirst(req));
     }else{
