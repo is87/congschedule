@@ -330,7 +330,7 @@ mc3.on("swiperight", function(ev) {
   }
 
   function buildDayBox(eventTag){
-      console.log(eventTag);
+      //console.log(eventTag);
     var htmlString = "";
     htmlString += "<div style='width:"+(window.innerWidth-20)+"px; margin-bottom: 10px; background-color: #ffffff; box-shadow: 2px 2px 1px #ccc, -2px -2px 1px #eee;'><div style='width:100%; height: 40px; margin-bottom: 5px; padding: 5px; ";
     if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
@@ -431,7 +431,7 @@ mc3.on("swiperight", function(ev) {
       thisDiv.style.height = boxWidth+"px";
       thisDiv.style.position = "absolute";
       thisDiv.style.left = (dag-1)*boxCC+10+"px";
-      thisDiv.style.top = week*boxCC*1.2+30+"px";
+      thisDiv.style.top = week*boxCC+30+"px";
       //thisDiv.style.backgroundColor = "#ffffff";
       //thisDiv.style.fontSize = boxWidth/5+"px";
       thisDiv.style.fontSize = boxWidth/4+"px";
@@ -456,10 +456,13 @@ mc3.on("swiperight", function(ev) {
       //thisDiv.innerHTML += "<div style='position:absolute; top:20%; left:20%;; width:60%; height:60%; border-radius:50%; background-color:transparent; border:1px solid #eca02c; '></div>";
       for(j = 0; j < x.length; j++){
         if(x[j].date == dateString){
-          if(myName != "" && JSON.stringify(x[j]).indexOf(myName) != -1){
-            //thisDiv.style.color = "#FF3824";
+          if(myName != "" && JSON.stringify(x[j]).toLowerCase().indexOf(myName.toLowerCase()) != -1){
+            thisDiv.style.color = "#FFFFFF";
             //thisDiv.style.backgroundColor = "#ffeeee";
             //thisDiv.firstChild.innerHTML = "- "+i+" -";
+            var dot = document.createElement("div");
+            dot.className = "dot";
+            thisDiv.appendChild(dot);
           }
           var ring = document.createElement("div");
           ring.className = "ring";
@@ -476,6 +479,7 @@ mc3.on("swiperight", function(ev) {
             ring.style.borderColor = "#881f9b";
           }
           thisDiv.appendChild(ring);
+          
         }
       }
 
@@ -488,4 +492,10 @@ mc3.on("swiperight", function(ev) {
       }
     }
     monthBox.appendChild(div);
+    /*var extraDiv = document.createElement("div");
+    extraDiv.innerText = "hej hej";
+    extraDiv.style.position = "absolute";
+    extraDiv.style.top = thisDiv.aTop + thisDiv.aHeight + "px";
+    extraDiv.innerHTML = buildDayBox(data.events[21]);
+    monthBox.appendChild(extraDiv);*/
   }

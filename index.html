@@ -4,7 +4,7 @@
   <title>Theocratic Calendar</title>
   <link rel="manifest" href="manifest.json">
   <script src="hammer.js"></script>
-  <script src="index.js?v=v7"></script>
+  <script src="index.js?v=8"></script>
   <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <meta charset="utf-8">
@@ -19,6 +19,9 @@
 }
 .ring3{
   top:15%; left:15%;; width:70%; height:70%;
+}
+.dot{
+  position:absolute; top:32%; left:32%;; width:36%; height:36%; border-radius:50%; background-color: #328b8c; border:1px solid #328b8c; z-index: -1;
 }
 </style>
 </head>
@@ -42,7 +45,7 @@
         <input type="button" onClick="saveSettings()" value="Save changes"/>
         <span onClick="about();" style="float:right; font-size: 8pt; position:relative; top:10px;">About this app</span>
       </div>
-      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.1<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="location.reload(true);">Force reload (BETA)</a></div>
+      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.2<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="location.reload(true);">Force reload (BETA)</a></div>
       </div>
   </div>
 </body>
