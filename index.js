@@ -332,7 +332,7 @@ mc3.on("swiperight", function(ev) {
   function buildDayBox(eventTag){
       console.log(eventTag);
     var htmlString = "";
-    htmlString += "<div style='width:"+(window.innerWidth-20)+"px; margin-bottom: 10px; background-color: #ffffff; box-shadow: 2px 2px 1px #ccc;'><div style='width:100%; height: 40px; margin-bottom: 5px; padding: 5px; ";
+    htmlString += "<div style='width:"+(window.innerWidth-20)+"px; margin-bottom: 10px; background-color: #ffffff; box-shadow: 2px 2px 1px #ccc, -2px -2px 1px #eee;'><div style='width:100%; height: 40px; margin-bottom: 5px; padding: 5px; ";
     if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
       htmlString += "background-color: #ec2c2c;"
     }else if(eventTag.type == "Meeting for Field Service"){
@@ -438,7 +438,7 @@ mc3.on("swiperight", function(ev) {
       //thisDiv.style.boxShadow = "2px 2px 1px #ccc";
       if(i==today.getDate() && d.getMonth() == today.getMonth() && d.getFullYear() == today.getFullYear()){
         //thisDiv.style.backgroundColor = "#bbb";
-        //thisDiv.style.fontWeight = "bold";
+        thisDiv.style.fontWeight = "bold";
         //thisDiv.style.backgroundColor = "#eef";
         thisDiv.style.color = "#328b8c";
       }
