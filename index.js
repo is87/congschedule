@@ -451,7 +451,7 @@ mc3.on("swiperight", function(ev) {
       thisDiv.aTop = week*boxCC+50;
       thisDiv.addEventListener("click", clickDay);
       //thisDiv.innerHTML = "<div style='width:"+boxWidth+"px; height:"+boxWidth/2.5+"px; line-height:"+boxWidth/2.5+"px; text-align:center; border-bottom: thin dotted #ccc;'>"+i+"</div>";
-      thisDiv.innerHTML = "<div style='position:absolute; top:50%; margin:0; -ms-transform: translateY(-50%); transform: translateY(-50%); width:"+boxWidth+"px; text-align:center;'>"+i+"</div>";
+      thisDiv.innerHTML = "<div style='position:absolute; left:1px; top:50%; padding:0; margin:0; -ms-transform: translateY(-50%); transform: translateY(-50%); width:100%; text-align:center;'>"+i+"</div>";
       //thisDiv.innerHTML += "<div class='ring ring2'></div>";
       //thisDiv.innerHTML += "<div style='position:absolute; top:20%; left:20%;; width:60%; height:60%; border-radius:50%; background-color:transparent; border:1px solid #eca02c; '></div>";
       for(j = 0; j < x.length; j++){
@@ -463,8 +463,8 @@ mc3.on("swiperight", function(ev) {
           }
           var ring = document.createElement("div");
           ring.className = "ring";
-          //if(x[j].date == x[j-1].date)ring.className = "ring2";alert("hej");
-          //if(j==2)ring.className = "ring ring3";
+          if(x[j].date == x[j-1].date)ring.className = "ring ring2";
+          if((x[j].date == x[j-1].date) && (x[j].date == x[j-2].date))ring.className = "ring ring3";
           if(x[j].type == "Weekend Meeting" || x[j].type == "Midweek Meeting"){
             //thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#ec2c2c;'></div>";
             //thisDiv.innerHTML += "<div style='position:absolute; top:25%; left:25%;; width:50%; height:50%; border-radius:50%; background-color:transparent; border:1px solid #ec2c2c; '></div>";
