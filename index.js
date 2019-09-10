@@ -434,7 +434,7 @@ mc3.on("swiperight", function(ev) {
       thisDiv.style.top = week*boxCC*1.2+30+"px";
       //thisDiv.style.backgroundColor = "#ffffff";
       //thisDiv.style.fontSize = boxWidth/5+"px";
-      thisDiv.style.fontSize = boxWidth/5+"px";
+      thisDiv.style.fontSize = boxWidth/4+"px";
       //thisDiv.style.boxShadow = "2px 2px 1px #ccc";
       if(i==today.getDate() && d.getMonth() == today.getMonth() && d.getFullYear() == today.getFullYear()){
         //thisDiv.style.backgroundColor = "#bbb";
