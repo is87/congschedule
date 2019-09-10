@@ -427,41 +427,55 @@ mc3.on("swiperight", function(ev) {
       var dateString = year+"-"+addZero(month+1)+"-"+addZero(i);
       //thisDiv.style.border = "1px solid #cccccc";
       thisDiv.style.width = boxWidth+"px";
-      thisDiv.style.height = boxWidth*1.2+"px";
+      //thisDiv.style.height = boxWidth*1.2+"px";
+      thisDiv.style.height = boxWidth+"px";
       thisDiv.style.position = "absolute";
       thisDiv.style.left = (dag-1)*boxCC+10+"px";
       thisDiv.style.top = week*boxCC*1.2+30+"px";
-      thisDiv.style.backgroundColor = "#ffffff";
+      //thisDiv.style.backgroundColor = "#ffffff";
+      //thisDiv.style.fontSize = boxWidth/5+"px";
       thisDiv.style.fontSize = boxWidth/5+"px";
-      thisDiv.style.boxShadow = "2px 2px 1px #ccc";
+      //thisDiv.style.boxShadow = "2px 2px 1px #ccc";
       if(i==today.getDate() && d.getMonth() == today.getMonth() && d.getFullYear() == today.getFullYear()){
         //thisDiv.style.backgroundColor = "#bbb";
-        thisDiv.style.fontWeight = "bold";
-        thisDiv.style.backgroundColor = "#eef";
+        //thisDiv.style.fontWeight = "bold";
+        //thisDiv.style.backgroundColor = "#eef";
+        thisDiv.style.color = "#328b8c";
       }
 
       thisDiv.myParam = i;
       thisDiv.aWidth = boxWidth;
-      thisDiv.aHeight = boxWidth*1.2;
+      //thisDiv.aHeight = boxWidth*1.2;
+      thisDiv.aHeight = boxWidth;
       thisDiv.aLeft = (dag-1)*boxCC+10;
       thisDiv.aTop = week*boxCC+50;
       thisDiv.addEventListener("click", clickDay);
-      thisDiv.innerHTML = "<div style='width:"+boxWidth+"px; height:"+boxWidth/2.5+"px; line-height:"+boxWidth/2.5+"px; text-align:center; border-bottom: thin dotted #ccc;'>"+i+"</div>";
-
+      //thisDiv.innerHTML = "<div style='width:"+boxWidth+"px; height:"+boxWidth/2.5+"px; line-height:"+boxWidth/2.5+"px; text-align:center; border-bottom: thin dotted #ccc;'>"+i+"</div>";
+      thisDiv.innerHTML = "<div style='position:absolute; top:50%; margin:0; -ms-transform: translateY(-50%); transform: translateY(-50%); width:"+boxWidth+"px; text-align:center;'>"+i+"</div>";
+      //thisDiv.innerHTML += "<div class='ring ring2'></div>";
+      //thisDiv.innerHTML += "<div style='position:absolute; top:20%; left:20%;; width:60%; height:60%; border-radius:50%; background-color:transparent; border:1px solid #eca02c; '></div>";
       for(j = 0; j < x.length; j++){
         if(x[j].date == dateString){
           if(myName != "" && JSON.stringify(x[j]).indexOf(myName) != -1){
-            thisDiv.style.color = "#FF3824";
+            //thisDiv.style.color = "#FF3824";
             //thisDiv.style.backgroundColor = "#ffeeee";
-            thisDiv.firstChild.innerHTML = "- "+i+" -";
+            //thisDiv.firstChild.innerHTML = "- "+i+" -";
           }
+          var ring = document.createElement("div");
+          ring.className = "ring";
+          //if(x[j].date == x[j-1].date)ring.className = "ring2";alert("hej");
+          //if(j==2)ring.className = "ring ring3";
           if(x[j].type == "Weekend Meeting" || x[j].type == "Midweek Meeting"){
-            thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#ec2c2c;'></div>";
+            //thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#ec2c2c;'></div>";
+            //thisDiv.innerHTML += "<div style='position:absolute; top:25%; left:25%;; width:50%; height:50%; border-radius:50%; background-color:transparent; border:1px solid #ec2c2c; '></div>";
           }else if(x[j].type == "Meeting for Field Service"){
-            thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#eca02c;'></div>";
+            //thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#eca02c;'></div>";
+            ring.style.borderColor = "#eca02c";
           }else{
-            thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#881f9b;'></div>";
+            //thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#881f9b;'></div>";
+            ring.style.borderColor = "#881f9b";
           }
+          thisDiv.appendChild(ring);
         }
       }
 
