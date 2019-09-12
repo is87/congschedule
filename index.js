@@ -466,8 +466,8 @@ mc3.on("swiperight", function(ev) {
           }
           var ring = document.createElement("div");
           ring.className = "ring";
-          if(x[j].date == x[j-1].date)ring.className = "ring ring2";
-          if((x[j].date == x[j-1].date) && (x[j].date == x[j-2].date))ring.className = "ring ring3";
+          if(j>0){if(x[j].date == x[j-1].date)ring.className = "ring ring2";}
+          if(j>1){if((x[j].date == x[j-1].date) && (x[j].date == x[j-2].date))ring.className = "ring ring3";}
           if(x[j].type == "Weekend Meeting" || x[j].type == "Midweek Meeting"){
             //thisDiv.innerHTML += "<div style='margin-bottom: 5%; width:"+boxWidth+"px; height:"+boxWidth/10+"px; background-color:#ec2c2c;'></div>";
             //thisDiv.innerHTML += "<div style='position:absolute; top:25%; left:25%;; width:50%; height:50%; border-radius:50%; background-color:transparent; border:1px solid #ec2c2c; '></div>";
