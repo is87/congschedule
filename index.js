@@ -350,8 +350,9 @@ mc3.on("swiperight", function(ev) {
     for(j = 0; j < items.length; j++){
       if(items[j].type=="Sound")htmlString += "<tr><td></td><td></td></tr><tr><td colspan='2' style='border-top:1px solid #ccc;'></td></tr>";
       /*if(items[j].getAttribute("type").indexOf("(Householder)") == -1){*/
-        if(items[j].type.length < 35)htmlString += "<tr><td style='color: #555; width: 50%;'>" + items[j].type + ":</td> ";
-        if(items[j].type.length >= 35)htmlString += "<tr><td style='color: #555; width: 50%;'>" + items[j].type.substring(0,35) + "...:</td> ";
+        htmlString += "<tr><td style='color: #555; width: 50%;'>" + items[j].type + "</td>";
+        //if(items[j].type.length < 35)htmlString += "<tr><td style='color: #555; width: 50%;'>" + items[j].type + ":</td> ";
+        //if(items[j].type.length >= 35)htmlString += "<tr><td style='color: #555; width: 50%;'>" + items[j].type.substring(0,35) + "...:</td> ";
       /*}else{
         htmlString += "<tr><td style='color: #777; width: 50%;'>(Householder)</td> ";
       }*/
