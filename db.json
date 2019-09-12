@@ -1,34 +1,301 @@
-{ "events": [
-{"date":"2016-09-01", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2016-09-03", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Jonathan Sindahebura"}]},
-{"date":"2016-09-04", "time":"14:00", "type":"Weekend Meeting", "items":[{"type":"Chairman", "name":"Johannes Lundmark"}, {"type":"Public Talk", "name":"Isak Ståhl"}, {"type":"Watchtower Study", "name":"Richard Lindström", "name2":"Samuel Ståhl"}, {"type":"Sound", "name":"Kelvin Mbewe"}, {"type":"Platform", "name":"Chrispin Lindström"}, {"type":"Persian Pre-Group Meeting", "name":"Roger Johansson"}, {"type":"Cleaning", "name":"Group 2"}]},
-{"date":"2016-09-05", "time":"18:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2016-09-07", "time":"18:30", "type":"Midweek Meeting", "items":[{"type":"Chairman", "name":"Johannes Lundmark"}, {"type":"Treasures", "name":"Jonathan Sindahebura"}, {"type":"Digging for Spiritual Gems", "name":"Joachim Kähler"}, {"type":"Bible Reading", "name":"Chrispin Lindström"}, {"type":"Prepare This Months Presentations", "name":"Johannes Lundmark"}, {"type":"If a Child Answers the Door", "name":"Samuel Ståhl"}, {"type":"Local Needs", "name":"Roger Johansson"}, {"type":"Congregation Bible Study", "name":"Richard Lindström", "name2":"Isak Ståhl"}, {"type":"Concluding Prayer", "name":"Kelvin Mbewe"}, {"type":"Sound", "name":"Samuel Ståhl"}, {"type":"Platform", "name":"Navid Hafezi"}, {"type":"Cleaning", "name":"Group 1"}]},
-{"date":"2016-09-08", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Samuel Ståhl"}]},
-{"date":"2016-09-10", "time":"11:00", "type":"Meeting for Field Service", "group":"Group 1", "location":"Kählers' house", "items":[{"type":"Conductor", "name":"Joachim Kähler"}]},
-{"date":"2016-09-11", "time":"14:00", "type":"Weekend Meeting", "items":[{"type":"Chairman", "name":"Isak Ståhl"}, {"type":"Public Talk", "name":"Roger Johansson"}, {"type":"Watchtower Study", "name":"Richard Lindström", "name2":"Chrispin Lindström"}, {"type":"Sound", "name":"Chrispin Lindström"}, {"type":"Platform", "name":"Isak Ståhl"}, {"type":"Persian Pre-Group Meeting", "name":"Johannes Lundmark"}, {"type":"Cleaning", "name":"Group 1"}]},
-{"date":"2016-09-12", "time":"18:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Johannes Lundmark"}]},
-{"date":"2016-09-14", "time":"18:30", "type":"Midweek Meeting", "items":[{"type":"Chairman", "name":"Kristoffer Mattsson"}, {"type":"Treasures", "name":"Benjamin Drury"}, {"type":"Digging for Spiritual Gems", "name":"Johannes Lundmark"}, {"type":"Bible Reading", "name":"Jonathan Sindahebura"}, {"type":"Initial Call", "name":"Yasmina Lindström", "name2": "Alina Lundmark"}, {"type":"Return Visit", "name":"Sanna Mbewe", "name2": "Thérèse Muvunyi"}, {"type":"Bible Study", "name":"Jenny Drury", "name2": "Brunilda Brahimllari"}, {"type":"Jehovah Has Done So Much for Me", "name":"Chrispin Lindström"}, {"type":"Congregation Bible Study", "name":"Roger Johansson", "name2":"Kelvin Mbewe"}, {"type":"Concluding Prayer", "name":"Isak Ståhl"}, {"type":"Sound", "name":"Navid Hafezi"}, {"type":"Platform", "name":"Samuel Ståhl"}, {"type":"Cleaning", "name":"Group 2"}]},
-{"date":"2016-09-15", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Isak Ståhl"}]},
-{"date":"2016-09-18", "time":"14:00", "type":"Weekend Meeting", "items":[{"type":"Chairman", "name":"Joachim Kähler"}, {"type":"Public Talk", "name":"Chrispin Lindström"}, {"type":"Watchtower Study", "name":"Richard Lindström", "name2":"Isak Ståhl"}, {"type":"Sound", "name":"Isak Ståhl"}, {"type":"Platform", "name":"Chrispin Lindström"}, {"type":"Persian Pre-Group Meeting", "name":"Jonathan Sindahebura"}, {"type":"Cleaning", "name":"Group 2"}]},
-{"date":"2016-09-19", "time":"18:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Roger Johansson"}]},
-{"date":"2016-09-21", "time":"18:30", "type":"Midweek Meeting", "items":[{"type":"Chairman", "name":"Wojciech Gaj"}, {"type":"Treasures", "name":"Richard Lindström"}, {"type":"Digging for Spiritual Gems", "name":"Isak Ståhl"}, {"type":"Bible Reading", "name":"Kelvin Mbewe"}, {"type":"Initial Call", "name":"Ulrika Lindström", "name2":"Arlette"}, {"type":"Return Visit", "name":"Renée Johansson", "name2":"Sanna Mbewe"}, {"type":"Bible Study", "name":"Nathalie Hafezi", "name2":"Jenny Drury"}, {"type":"Avoid These Pitfalls When Conducting a Bible Study", "name":"Navid Hafezi"}, {"type":"Congregation Bible Study", "name":"Kristoffer Mattsson", "name2":"Jonathan Sindahebura"}, {"type":"Concluding Prayer", "name":"Johannes Lundmark"}, {"type":"Sound", "name":"Kelvin Mbewe"}, {"type":"Platform", "name":"Navid Hafezi"}, {"type":"Cleaning", "name":"Group 1"}]},
-{"date":"2016-09-22", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Richard Lindström"}]},
-{"date":"2016-09-25", "time":"14:00", "type":"Weekend Meeting", "items":[{"type":"Chairman", "name":"Roger Johansson"}, {"type":"Public Talk", "name":"Benjamin Drury"}, {"type":"Watchtower Study", "name":"Richard Lindström", "name2":"Navid Hafezi"}, {"type":"Sound", "name":"Samuel Ståhl"}, {"type":"Platform", "name":"Kelvin Mbewe"}, {"type":"Persian Pre-Group Meeting", "name":"Navid Hafezi"}, {"type":"Cleaning", "name":"Group 1"}]},
-{"date":"2016-09-26", "time":"18:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Wojciech Gaj"}]},
-{"date":"2016-09-28", "time":"18:30", "type":"Midweek Meeting", "items":[{"type":"Chairman", "name":"Joachim Kähler"}, {"type":"Treasures", "name":"Samuel Ståhl"}, {"type":"Digging for Spiritual Gems", "name":"Jonathan Sindahebura"}, {"type":"Bible Reading", "name":"Joshua Drury"}, {"type":"Initial Call", "name":"Alina Lundmark", "name2":"Nathalie Hafezi"}, {"type":"Return Visit", "name":"Marielle Mattsson", "name2":"Cornelia Kähler"}, {"type":"Bible Study", "name":"Christel Ståhl", "name2":"Renée Johansson"}, {"type":"Improving Our Skills in the Ministry - Encouraging Interested Ones to Attend Meetings", "name":"Isak Ståhl"}, {"type":"Congregation Bible Study", "name":"Wojciech Gaj", "name2":"Chrispin Lindström"}, {"type":"Concluding Prayer", "name":"Kristoffer Mattsson"}, {"type":"Sound", "name":"Chrispin Lindström"}, {"type":"Platform", "name":"Samuel Ståhl"}, {"type":"Cleaning", "name":"Group 2"}]},
-{"date":"2016-09-29", "time":"10:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Isak Ståhl"}]},
-{"date":"2019-09-07", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-08","time":"14:00","type":"Weekend Meeting","items":[{"type":"Chairman","name":"Kristoffer Mattsson"},{"type":"Public Talk","name":"Joachim Kähler"},{"type":"Watchtower Study","name":"Richard Lindström","name2":"Isak Ståhl"},{"type":"Sound","name":"Kristoffer Mattsson"},{"type":"Platform","name":"Joachim Kähler"},{"type":"Cleaning","name":"Group 2"}]},
-{"date":"2019-09-11", "time":"18:30", "type":"Midweek Meeting", "items":[{"type":"Chairman", "name":"Roger Johansson"}, {"type":"Treasures", "name":"Benjamin Drury"}, {"type":"Digging for Spiritual Gems", "name":"Johannes Lundmark"}, {"type":"Bible Reading", "name":"Kristoffer Mattsson"}, {"type":"Initial Call Video", "name":"Roger Johansson"}, {"type":"Initial Call", "name":"Thereze Muvunyi", "name2":"Alina Lundmark"}, {"type":"Initial Call", "name":"Brunilda Brahimllari", "name2":"Jenny Drury"}, {"type":"Initial Call", "name":"Renée Johansson", "name2":"Marielle Mattsson"}, {"type":"Do We Appreciate Our Meetings?", "name":"Isak Ståhl"}, {"type":"Pay Attention at the Meetings", "name":"Samuel Ståhl"}, {"type":"Congregation Bible Study", "name":"Richard Lindström", "name2":"Joachim Kähler"}, {"type":"Concluding Prayer", "name":"Roger Johansson"}, {"type":"Sound", "name":"Joachim Kähler"}, {"type":"Platform", "name":"Kristoffer Mattsson"}, {"type":"Cleaning", "name":"Group 1"}]},
-{"date":"2019-09-14", "time":"11:00", "type":"Meeting for Field Service", "group":"Group 1", "location":"Kingdom Hall", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-14", "time":"11:00", "type":"Meeting for Field Service", "group":"Group 2", "location":"Kingdom Hall", "items":[{"type":"Conductor", "name":"Johannes Lundmark"}]},
-{"date":"2019-09-15", "time":"11:00", "type":"Meeting for Field Service", "group":"Congregation", "location":"Kingdom Hall", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-15","time":"14:00","type":"Weekend Meeting","items":[{"type":"Chairman","name":"Isak Ståhl"},{"type":"Public Talk","name":"Richard Lindström"},{"type":"Watchtower Study","name":"Kristoffer Mattsson","name2":"Benjamin Drury"},{"type":"Sound","name":"Richard Lindström"},{"type":"Platform","name":"Samuel Ståhl"},{"type":"Persian Meeting","name":"Navid Hafezi"},{"type":"Cleaning","name":"Group 1"}]},
-{"date":"2019-09-15", "time":"16:00", "type":"Cleaning", "items":[{"type":"Location", "name":"Kingdom Hall"}]},
-{"date":"2019-09-19", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-21", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-22", "time":"09:30", "type":"Circuit Assembly", "items":[{"type":"Location", "name":"Oulo"}]},
-{"date":"2019-09-23", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]},
-{"date":"2019-09-28", "time":"11:00", "type":"Meeting for Field Service", "items":[{"type":"Conductor", "name":"Kristoffer Mattsson"}]}
-]}
+{
+  "events": [
+    {
+      "date": "2019-09-07",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-08",
+      "time": "14:00",
+      "type": "Weekend Meeting",
+      "items": [
+        {
+          "type": "Chairman",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Public Talk",
+          "name": "Joachim Kähler"
+        },
+        {
+          "type": "Watchtower Study",
+          "name": "Richard Lindström",
+          "name2": "Isak Ståhl"
+        },
+        {
+          "type": "Sound",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Platform",
+          "name": "Joachim Kähler"
+        },
+        {
+          "type": "Cleaning",
+          "name": "Group 2"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-11",
+      "time": "18:30",
+      "type": "Midweek Meeting",
+      "items": [
+        {
+          "type": "Chairman",
+          "name": "Roger Johansson"
+        },
+        {
+          "type": "Treasures",
+          "name": "Benjamin Drury"
+        },
+        {
+          "type": "Digging for Spiritual Gems",
+          "name": "Johannes Lundmark"
+        },
+        {
+          "type": "Bible Reading",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Initial Call Video",
+          "name": "Roger Johansson"
+        },
+        {
+          "type": "Initial Call",
+          "name": "Thereze Muvunyi",
+          "name2": "Alina Lundmark"
+        },
+        {
+          "type": "Initial Call",
+          "name": "Brunilda Brahimllari",
+          "name2": "Jenny Drury"
+        },
+        {
+          "type": "Initial Call",
+          "name": "Renée Johansson",
+          "name2": "Marielle Mattsson"
+        },
+        {
+          "type": "Do We Appreciate Our Meetings?",
+          "name": "Isak Ståhl"
+        },
+        {
+          "type": "Pay Attention at the Meetings",
+          "name": "Samuel Ståhl"
+        },
+        {
+          "type": "Congregation Bible Study",
+          "name": "Richard Lindström",
+          "name2": "Joachim Kähler"
+        },
+        {
+          "type": "Concluding Prayer",
+          "name": "Roger Johansson"
+        },
+        {
+          "type": "Sound",
+          "name": "Joachim Kähler"
+        },
+        {
+          "type": "Platform",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Cleaning",
+          "name": "Group 1"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-14",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "group": "Group 1",
+      "location": "Kingdom Hall",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-14",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "group": "Group 2",
+      "location": "Kingdom Hall",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Johannes Lundmark"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-15",
+      "time": "14:00",
+      "type": "Weekend Meeting",
+      "items": [
+        {
+          "type": "Chairman",
+          "name": "Isak Ståhl"
+        },
+        {
+          "type": "Public Talk",
+          "name": "Richard Lindström"
+        },
+        {
+          "type": "Watchtower Study",
+          "name": "Kristoffer Mattsson",
+          "name2": "Benjamin Drury"
+        },
+        {
+          "type": "Sound",
+          "name": "Richard Lindström"
+        },
+        {
+          "type": "Platform",
+          "name": "Samuel Ståhl"
+        },
+        {
+          "type": "Persian Meeting",
+          "name": "Navid Hafezi"
+        },
+        {
+          "type": "Cleaning",
+          "name": "Group 1"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-19",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-21",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-22",
+      "time": "09:30",
+      "type": "Circuit Assembly",
+      "items": [
+        {
+          "type": "Location",
+          "name": "Oulo"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-23",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-25",
+      "time": "18:30",
+      "type": "Midweek Meeting",
+      "items": [
+        {
+          "type": "Song 88 and Prayer",
+          "name": ""
+        },
+        {
+          "type": "Opening Comments",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "“Discipline​—Evidence of Jehovah’s Love”",
+          "name": "Samuel Ståhl"
+        },
+        {
+          "type": "Digging for Spiritual Gems",
+          "name": "Isak Ståhl"
+        },
+        {
+          "type": "Bible Reading",
+          "name": "Viktor Boman"
+        },
+        {
+          "type": "Second Return Visit Video",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Second Return Visit",
+          "name": "Marielle Mattsson",
+          "name2": "Cornelia Kähler"
+        },
+        {
+          "type": "Bible Study",
+          "name": "Alina Lundmark",
+          "name2": "Jenny Drury"
+        },
+        {
+          "type": "Song 115",
+          "name": ""
+        },
+        {
+          "type": "Enduring Despite . . . Our Own Imperfections",
+          "name": "Benjamin Drury"
+        },
+        {
+          "type": "Local Needs",
+          "name": "Richard Lindström"
+        },
+        {
+          "type": "Congregation Bible Study",
+          "name": "Roger Johansson",
+          "name2": "Chrispin Lindström"
+        },
+        {
+          "type": "Review Followed by Preview of Next Week",
+          "name": "Kristoffer Mattsson"
+        },
+        {
+          "type": "Song 74 and Prayer",
+          "name": "Johannes Lundmark"
+        }
+      ]
+    },
+    {
+      "date": "2019-09-28",
+      "time": "11:00",
+      "type": "Meeting for Field Service",
+      "items": [
+        {
+          "type": "Conductor",
+          "name": "Kristoffer Mattsson"
+        }
+      ]
+    }
+  ]
+}
