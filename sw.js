@@ -16,7 +16,7 @@ self.addEventListener("activate", e => {
 self.addEventListener("fetch", async e => {
     const req = e.request;
     const url = new URL(req.url);
-    console.log(url);
+    //console.log(url);
     if(url.origin === location.origin){
         e.respondWith(cacheFirst(req));
     }else{
@@ -27,7 +27,7 @@ self.addEventListener("fetch", async e => {
 async function cacheFirst(req){
     const cache = await caches.open(cacheName);
     const cached = await cache.match(req);
-    console.log("Fetching cached file");
+    //console.log("Fetching cached file");
     return cached || fetch(req);
 }
 
@@ -36,11 +36,11 @@ async function networkAndCache(req){
     try{
         const fresh = await fetch(req);
         await cache.put(req, fresh.clone());
-        console.log("Fetching new file");
+        //console.log("Fetching new file");
         return fresh;
     } catch(e){
         const cached = await cache.match(req);
-        console.log("Fetching cached file");
+        //console.log("Fetching cached file");
         return cached;
     }
 }

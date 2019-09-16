@@ -12,15 +12,15 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
     //var xmlhttp = new XMLHttpRequest();
     //var url = "https://is87.github.io/congschedule/db.json";
     var url = "https://isak.pythonanywhere.com?action=read";
-    if(navigator.onLine){
+    /*if(navigator.onLine){
         url += "&v="+Math.random();
         setCookie("dbURL", encodeURIComponent(url), 365);
         //alert("Online - Database URL: "+url);
     }else{
         url = decodeURIComponent(getCookie("dbURL"));
         //alert("Offline - Database URL: "+url);
-    }
-    console.log(url);
+    }*/
+    //console.log(url);
   
     /*xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
