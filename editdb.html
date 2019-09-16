@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit database</title>
+  <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<meta charset="utf-8">
+<meta name="theme-color" content="#328b8c">
+<style>
+  span[id^="view"]
+  {
+    cursor: pointer;
+  }
+</style>
+<script>
+var db;
+var inputs = 0;
+$(document).ready(function(){
+
+init();
+
+});
+
+function init(){
+  //var url = "https://is87.github.io/congschedule/db.json";
+  var url = "http://isak.pythonanywhere.com/?action=read";
+        
+  $.post("http://isak.pythonanywhere.com",
+  {
+    action: "read",
+  },
+  function(data, status){
+    db = data;
+    console.log(JSON.stringify(data));
+    loadTable();
+    setView(1);
+  });
+}
+function loadTable(){
+  document.getElementById("eventTable").innerHTML = "";
+  for(i=0; i<db.events.length;i++){
+    ev = db.events[i];
+    document.getElementById("eventTable").innerHTML += "<tr><td>"+ev.date+"</td><td>"+ev.time+"</td><td>"+ev.type+"</td><td><button onclick='seeItems("+i+");'>Items</button></td><td><button onclick='deleteEvent("+i+");'>Delete</button></td></tr>";
+  }
+}
+
+function seeItems(chosenEvent){
+  ev = db.events[chosenEvent];
+  document.getElementById("eventInfo").value = JSON.stringify(ev, null, 2);
+}
+
+function deleteEvent(chosenEvent){
+  db.events.splice(chosenEvent, 1);
+  loadTable();
+}
+
+function setView(nr){
+  document.getElementById("mainBox").style.display = "none";
+  document.getElementById("addBox").style.display = "none";
+  document.getElementById("midweekBox").style.display = "none";
+  if(nr==1)document.getElementById("mainBox").style.display = "block";
+  if(nr==2)document.getElementById("addBox").style.display = "block";
+  if(nr==3)document.getElementById("midweekBox").style.display = "block";
+}
+
+function createItem(){
+      itemNr = (document.getElementById("newEvent").childElementCount-12)/3;
+      document.getElementById("newEvent").insertAdjacentHTML("beforeend","<input type='text' id='ia"+itemNr+"'/><input type='text' id='ib"+itemNr+"'/><br>");
+}
+
+function newEvent(){
+      var ev = new Object();
+      ev.date = document.getElementById("i1").value;
+      ev.time = document.getElementById("i2").value;
+      ev.type = document.getElementById("i3").value;
+      if(document.getElementById("i4").value != "")ev.group = document.getElementById("i4").value;
+      if(document.getElementById("i5").value != "")ev.location = document.getElementById("i5").value;
+      ev.items = [];
+      itemLength = (document.getElementById("newEvent").childElementCount-12)/3;
+      for(i=0;i<itemLength;i++){
+        ev2 = new Object();
+        ev2.type = document.getElementById("ia"+i).value;
+        ev2.name = document.getElementById("ib"+i).value;
+        ev.items.push(ev2);
+      }
+      place = findTimeSlot(ev.date+"T"+ev.time);
+      db.events.splice(place, 0, ev);
+      loadTable();
+      setView(1);
+}
+
+function findTimeSlot(timeText){
+      found = -1;
+      for(i = 0;i<db.events.length;i++){
+        thisText = db.events[i].date +"T"+ db.events[i].time;
+        if(thisText <= timeText){
+          found = i;
+        }
+      }
+      return found+1;
+}
+
+function saveChanges(){
+  document.getElementById("saveStatus").innerHTML = "";
+  $.post("http://isak.pythonanywhere.com",
+  {
+    action: "write",
+    password: document.getElementById("dbPassword").value,
+    data: JSON.stringify(db, null, 2)
+  },
+  function(data, status){
+    document.getElementById("saveStatus").innerHTML = data;
+  });
+}
+
+function loadDate(){
+        
+        datum = "2019/09/12";
+        if(document.getElementById("midweekDate").value != "")datum = document.getElementById("midweekDate").value;
+        datum = datum.replace("-", "/");
+        datum = datum.replace("-", "/");
+        var url = "https://wol.jw.org/en/wol/dt/r1/lp-e/"+datum;
+        fetch(url, {mode:"cors"})
+  .then(function(response) {
+    return response.text();
+  })
+  .then(function(html) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(html, "text/html");
+    document.getElementById("form").innerHTML = "";
+    
+    var su = doc.querySelectorAll('.su');
+    inputs = su.length;
+    for(i=0;i<su.length;i++){
+      var p = su[i];
+      var q = p.innerText.indexOf(":");
+      if(q!=-1){
+        p1 = p.innerText.substring(0, q);
+      }else{
+        p1 = p.innerText;
+      }
+      var q1 = p1.indexOf("(3 min.");
+      if(q1!=-1)p1 = p1.substring(0, q1);
+      
+      p1 = p1.trim();
+      document.getElementById("form").innerHTML += "<input id='input"+i+"a' type='text' value='"+p1+"' /><input id='input"+i+"b' type='text' /><input id='input"+i+"c' type='text' /><br>";
+    }
+  });
+}
+</script>
+</head>
+<body style="background-color: #ECEAE7; background-color: #FFFFFF; font-family: 'Quicksand', sans-serif; padding:0; margin:0; color:#333;">
+  <div id="navBox" style="background-color:#328b8c; color:#fff; height: 40px; text-align:center; line-height:40px; box-shadow: 0px 2px 1px #999;">
+    <button onclick="init();">Load database</button> <input id="dbPassword" type="password"/><button onclick="saveChanges();">Save changes</button><span id="saveStatus">Status</span>
+  </div>
+  <div id="mainBox" style="display:block; color: #5B3C88; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto;">
+    <div id="tableBox"><table><tr valign="top"><td><table id="eventTable"></table></td><td><textarea id="eventInfo" rows="20" cols="40">Info</textarea></td></tr></table></div>
+  </div>
+  <div id="addBox" style="display: none; color: #5B3C88; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto;">
+      <div id="newEvent">
+        Date: <input id="i1" type="date" value=""/><br>
+        Time: <input id="i2" type="time" value=""/><br>
+        <select id="i3">
+          <option value="Meeting for Field Service">Meeting for Field Service</option>
+          <option value="Midweek Meeting">Midweek Meeting</option>
+          <option value="Weekend Meeting">Weekend Meeting</option>
+          <option value="Circuit Assembly">Circuit Assembly</option>
+        </select><br>
+        Group: <input id="i4" type="text" value=""/><br>
+        Location: <input id="i5" type="text" value=""/><br>
+        ---Items---<button onclick="createItem();">Add item</button><br>
+        </div>
+        <br><br><button onclick="newEvent();">Add event to database</button>
+  </div>
+  <div id="midweekBox" style="display: none; color: #5B3C88; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto;">
+      <input type="date" id="midweekDate" /><button onclick="loadDate();">Load</button><br><div id="form"></div>
+  </div>
+  <div id="bottomBox" style="width: 100%; height: 40px; font-size: 12px; position: fixed; left: 0px; bottom: 0px; background-color: #328b8c; color:#fff;  text-align:center; line-height:40px;">
+    <span id="view1" onclick="setView(1);">See all events</span> - <span id="view2" onclick="setView(2);">Add event</span> - <span id="view3" onclick="setView(3);">Add Midweek Meeting</span>
+  </div>
+  <div id="modal" style="display:none; position:fixed; left:0; top:0; width:100%; height:100%; z-index:1; overflow:auto; background-color:rgba(0,0,0,0.4);">
+    <div style='background-color: #fefefe; margin: 10% auto; width: 80%; box-shadow: 2px 2px 5px #666;'></div>
+  </div>
+</body>
+</html>

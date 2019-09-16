@@ -10,9 +10,10 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
 
   function loadJSON(){
     //var xmlhttp = new XMLHttpRequest();
-    var url = "https://is87.github.io/congschedule/db.json";
+    //var url = "https://is87.github.io/congschedule/db.json";
+    var url = "http://isak.pythonanywhere.com?action=read";
     if(navigator.onLine){
-        url += "?v="+Math.random();
+        url += "&v="+Math.random();
         setCookie("dbURL", encodeURIComponent(url), 365);
         //alert("Online - Database URL: "+url);
     }else{
