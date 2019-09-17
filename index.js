@@ -154,6 +154,10 @@ function hideSettings(){
     }
   }
 
+  function hidePopup(){
+    document.getElementById("popupBox").style.display = "none";
+  }
+
   function addZero(a){
     if(a<10)a="0"+a;
     return a;

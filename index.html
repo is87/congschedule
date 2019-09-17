@@ -30,7 +30,7 @@
 <body style="background-color: #ECEAE7; background-color: #FFFFFF; font-family: 'Quicksand', sans-serif; padding:0; margin:0; color:#333;">
   <div id="navBox" style="background-color:#328b8c; color:#fff; height: 40px; text-align:center; line-height:40px; box-shadow: 0px 2px 1px #999;"></div>
   <div id="monthBox" style="font-size: 12px; width: 100%; overflow:auto; position: absolute; left:0px; top: 40px; bottom: 40px;"></div>
-  <div id="popupBox" style="width: 100%; max-height: 50%; overflow:auto; font-size: 12px; position: fixed; left: 0px; bottom: 40px; background-color: #000; color:#fff;  text-align:center; display: none; padding:0; margin:0;";></div>
+  <div id="popupBox" ondblclick="hidePopup();" style="width: 100%; max-height: 50%; overflow:auto; font-size: 12px; position: fixed; left: 0px; bottom: 40px; background-color: #000; color:#fff;  text-align:center; display: none; padding:0; margin:0;";></div>
   <div id="dayBox" onClick="backToMonth();" style=" color: #5B3C88; display:none; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto; z-index:-1; "></div>
   <div id="scheduleBox" style=" color: #5B3C88; display:none; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto; z-index:-1; "></div>
   <div id="bottomBox" style="width: 100%; height: 40px; font-size: 12px; position: fixed; left: 0px; bottom: 0px; background-color: #328b8c; color:#fff;  text-align:center; line-height:40px;"><span onClick="seeToday();">TODAY</span> - <span onClick="seeThisMonth();">THIS MONTH</span> - <span onClick="loadMySchedule(true);">MY SCHEDULE</span> - <span onClick="showSettings();">SETTINGS<span></div>
@@ -45,7 +45,7 @@
         <input type="button" onClick="saveSettings()" value="Save changes"/>
         <span onClick="about();" style="float:right; font-size: 8pt; position:relative; top:10px;">About this app</span>
       </div>
-      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.4<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="send_message_to_sw('delete');">Force reload (BETA)</a></div>
+      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.5<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="send_message_to_sw('delete');">Force reload (BETA)</a></div>
       </div>
   </div>
 </body>
