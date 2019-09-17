@@ -137,6 +137,9 @@ function hideSettings(){
   }
 
   function showDay(year, month, day){
+    thisYear = year;
+    thisMonth = month;
+    thisDay = day;
     popupBox = document.getElementById("popupBox");
     popupBox.style.display = "block";
     var dateString = year+"-"+addZero(month+1)+"-"+addZero(day);
@@ -145,13 +148,16 @@ function hideSettings(){
     hits = 0;
     var d = new Date(year, month, day);
     wday = weekdays[d.getDay()];
+    dateText = wday+", "+months[month]+" "+day;
     for(i = 0; i < x.length; i++){
       if(x[i].date == dateString){
         hits++;
-        popupBox.innerHTML += buildNewDayBox(x[i], wday+", "+months[month]+" "+day);
+        popupBox.innerHTML += buildNewDayBox(x[i], dateText);
       }
 
     }
+    if(hits==0)popupBox.innerHTML = "<div style='width:100%; text-align:left; background-color:#328b8c; opacity:0.7;'><div style='width:100%; padding: 5px; color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span><br><span style='font-weight:lighter;'>NO EVENTS THIS DAY</span></div>";
+    
   }
 
   function hidePopup(){
