@@ -225,7 +225,7 @@ function hideSettings(){
 var mc = new Hammer(monthBox);
 var mc2 = new Hammer(dayBox);
 var mc3 = new Hammer(popupBox);
-mc3.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
+//mc3.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
 //mc.add( new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL, threshold: 10 }) );
 
@@ -260,9 +260,9 @@ mc3.on("swiperight", function(ev) {
     showDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
 });
 
-mc3.on("swipedown", function(ev) {
+/*mc3.on("swipedown", function(ev) {
   hidePopup();
-});
+});*/
 
     //alert(decodeURIComponent(location.search));
     searchString = decodeURIComponent(location.search);
