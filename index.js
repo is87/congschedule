@@ -125,9 +125,26 @@ function hideSettings(){
     thisDay = pressedDiv.myParam;
 
 
-    loadDay(thisYear, thisMonth, thisDay);
+    //loadDay(thisYear, thisMonth, thisDay);
+    showDay(thisYear, thisMonth, thisDay);
+    
 
+  }
 
+  function showDay(year, month, day){
+    popupBox = document.getElementById("popupBox");
+    popupBox.style.display = "block";
+    var dateString = year+"-"+addZero(month+1)+"-"+addZero(day);
+    var x = data.events;
+    popupBox.innerHTML = "";
+    hits = 0;
+    for(i = 0; i < x.length; i++){
+      if(x[i].date == dateString){
+        hits++;
+        popupBox.innerHTML += buildNewDayBox(x[i]);
+      }
+
+    }
   }
 
   function addZero(a){
@@ -186,6 +203,7 @@ function hideSettings(){
     monthBox = document.getElementById("monthBox");
     dayBox = document.getElementById("dayBox");
     scheduleBox = document.getElementById("scheduleBox");
+    popupBox = document.getElementById("popupBox");
 
 var mc = new Hammer(monthBox);
 var mc2 = new Hammer(dayBox);
@@ -243,6 +261,7 @@ mc3.on("swiperight", function(ev) {
     }else{
       scheduleMode = "my";
     }
+    popupBox.style.display = "none";
     monthBox.style.display = "none";
     dayBox.style.display = "none";
     scheduleBox.style.display = "block";
@@ -288,7 +307,7 @@ mc3.on("swiperight", function(ev) {
 
 
   function loadDay(year, month, day){
-
+    popupBox.style.display = "none";
     monthBox.style.display = "none";
     scheduleBox.style.display = "none";
     thisYear = year;
@@ -377,10 +396,53 @@ mc3.on("swiperight", function(ev) {
     return htmlString;
   }
 
+  function buildNewDayBox(eventTag){
+  var htmlString = "";
+  if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
+    colorString = "background-color: #ec2c2c;"
+  }else if(eventTag.type == "Meeting for Field Service"){
+    colorString = "background-color: #eca02c;"
+  }else{
+    colorString = "background-color: #881f9b;"
+  }
+  htmlString += "<div style='width:100%; text-align:left; "+colorString+" '><div style='width:100%; height: 40px; margin-bottom: 5px; padding: 5px; ";
+  
+  htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; line-height:30px; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
+  var items = eventTag.items;
+  if(typeof eventTag.group !== 'undefined' && typeof eventTag.location !== 'undefined') htmlString += "<div style='font-size: 12px; text-align:center; padding-bottom:10px;'>"+eventTag.group+" - Location: "+eventTag.location+"</div>";
+  htmlString += "<table style='font-size: 12px; width:100%;'>"
+  if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
+      htmlString += "<tr><td style='font-weight:bold; width: 50%;'>ASSIGNMENT</td><td style='font-weight:bold; width: 50%;'>PUBLISHER</td></tr>";
+  }
+  for(j = 0; j < items.length; j++){
+    if(items[j].type=="Sound")htmlString += "<tr><td></td><td></td></tr><tr><td colspan='2' style='border-top:1px solid #ccc;'></td></tr>";
+      htmlString += "<tr><td style=' width: 50%;'>" + items[j].type + "</td>";
+      
+    if(items[j].name == myName || (items[j].name == myGroup && items[j].type=="Cleaning")){
+      htmlString += "<td style='color: #f00;'>";
+    }else {
+      htmlString += "<td style='color: #fff;'>";
+    }
+    htmlString += items[j].name +"</td><tr>";
+
+    if(typeof items[j].name2 !== 'undefined'){
+      if(items[j].name2 == myName){
+        htmlString += "<tr><td style=' width: 50%;'></td><td style='color: #f00;'>("+items[j].name2+")</td><tr>";
+      }else{
+        htmlString += "<tr><td style=' width: 50%;'></td><td style='color: #fff;'>("+items[j].name2+")</td><tr>";
+      }
+    }
+
+  }
+  htmlString += "</table></div></div>";
+  return htmlString;
+}
+
   function loadMonth(year, month, day){
     w = window.innerWidth;
     h = window.innerHeight;
     if(h<w)w=h;
+    popupBox.style.display = "none";
     dayBox.style.display = "none";
     scheduleBox.style.display = "none";
     monthBox.style.display = "block";
