@@ -138,10 +138,12 @@ function hideSettings(){
     var x = data.events;
     popupBox.innerHTML = "";
     hits = 0;
+    var d = new Date(year, month, day);
+    wday = weekdays[d.getDay()];
     for(i = 0; i < x.length; i++){
       if(x[i].date == dateString){
         hits++;
-        popupBox.innerHTML += buildNewDayBox(x[i]);
+        popupBox.innerHTML += buildNewDayBox(x[i], wday+", "+months[month]+" "+day);
       }
 
     }
@@ -396,7 +398,8 @@ mc3.on("swiperight", function(ev) {
     return htmlString;
   }
 
-  function buildNewDayBox(eventTag){
+  function buildNewDayBox(eventTag, dateText){
+    
   var htmlString = "";
   if(eventTag.type == "Weekend Meeting" || eventTag.type == "Midweek Meeting"){
     colorString = "background-color: #ec2c2c;"
@@ -405,9 +408,9 @@ mc3.on("swiperight", function(ev) {
   }else{
     colorString = "background-color: #881f9b;"
   }
-  htmlString += "<div style='width:100%; text-align:left; "+colorString+" '><div style='width:100%; height: 40px; margin-bottom: 5px; padding: 5px; ";
+  htmlString += "<div style='width:100%; text-align:left; "+colorString+" '><div style='width:100%; margin-bottom: 5px; padding: 5px; ";
   
-  htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; line-height:30px; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
+  htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span><br><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
   var items = eventTag.items;
   if(typeof eventTag.group !== 'undefined' && typeof eventTag.location !== 'undefined') htmlString += "<div style='font-size: 12px; text-align:center; padding-bottom:10px;'>"+eventTag.group+" - Location: "+eventTag.location+"</div>";
   htmlString += "<table style='font-size: 12px; width:100%;'>"
