@@ -10,7 +10,7 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
 
   function send_message_to_sw(msg){
     navigator.serviceWorker.controller.postMessage(msg);
-    setTimeout(window.location.reload(true), 1000);
+    setTimeout(function() {window.location.reload(true);}, 1000);
 }
 
   function loadJSON(){
