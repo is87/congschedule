@@ -250,7 +250,7 @@ mc3.on("swipeleft", function(ev) {
 mc3.on("swiperight", function(ev) {
     //if(scheduleMode=="my")loadMySchedule(true);
     var datum = new Date(thisYear, thisMonth, thisDay-1);
-    loadDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
+    showDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
 });
 
     //alert(decodeURIComponent(location.search));
