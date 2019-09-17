@@ -422,17 +422,17 @@ mc3.on("swiperight", function(ev) {
       htmlString += "<tr><td style=' width: 50%;'>" + items[j].type + "</td>";
       
     if(items[j].name == myName || (items[j].name == myGroup && items[j].type=="Cleaning")){
-      htmlString += "<td style='color: #f00;'>";
+      htmlString += "<td style='font-weight:bold;'>";
     }else {
-      htmlString += "<td style='color: #fff;'>";
+      htmlString += "<td>";
     }
     htmlString += items[j].name +"</td><tr>";
 
     if(typeof items[j].name2 !== 'undefined'){
       if(items[j].name2 == myName){
-        htmlString += "<tr><td style=' width: 50%;'></td><td style='color: #f00;'>("+items[j].name2+")</td><tr>";
+        htmlString += "<tr><td style=' width: 50%;'></td><td style='font-weight:bold;'>("+items[j].name2+")</td><tr>";
       }else{
-        htmlString += "<tr><td style=' width: 50%;'></td><td style='color: #fff;'>("+items[j].name2+")</td><tr>";
+        htmlString += "<tr><td style=' width: 50%;'></td><td>("+items[j].name2+")</td><tr>";
       }
     }
 
