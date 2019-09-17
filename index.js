@@ -225,6 +225,7 @@ function hideSettings(){
 var mc = new Hammer(monthBox);
 var mc2 = new Hammer(dayBox);
 var mc3 = new Hammer(popupBox);
+mc3.get('swipe').set({ direction: Hammer.DIRECTION_ALL });
 
 //mc.add( new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL, threshold: 10 }) );
 
