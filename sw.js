@@ -17,7 +17,10 @@ self.addEventListener("activate", e => {
 
 self.addEventListener('message', function(event){
     console.log("SW Received Message: " + event.data);
-    self.caches.delete(cacheName);
+    caches.keys().then(function(names) {
+        for (let name of names)
+            caches.delete(name);
+    });
 });
 
 self.addEventListener("fetch", async e => {
