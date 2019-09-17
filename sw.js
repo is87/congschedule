@@ -17,6 +17,8 @@ self.addEventListener("activate", e => {
 
 self.addEventListener('message', function(event){
     console.log("SW Received Message: " + event.data);
+    self.caches.delete(cacheName);
+    location.reload(true);
 });
 
 self.addEventListener("fetch", async e => {
