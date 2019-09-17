@@ -33,7 +33,7 @@
   <div id="popupBox" onclick="hidePopup();" style="width: 100%; max-height: 50%; overflow:auto; font-size: 12px; position: fixed; left: 0px; bottom: 40px; background-color: #000; color:#fff;  text-align:center; display: none; padding:0; margin:0;";></div>
   <div id="dayBox" onClick="backToMonth();" style=" color: #5B3C88; display:none; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto; z-index:-1; "></div>
   <div id="scheduleBox" style=" color: #5B3C88; display:none; padding: 10px; box-sizing: border-box; position: absolute; left:0px; top: 40px; width: 100%; bottom:40px; overflow:auto; z-index:-1; "></div>
-  <div id="bottomBox" style="width: 100%; height: 40px; font-size: 12px; position: fixed; left: 0px; bottom: 0px; background-color: #328b8c; color:#fff;  text-align:center; line-height:40px;"><span onClick="seeToday();">TODAY</span> - <span onClick="seeThisMonth();">THIS MONTH</span> - <span onClick="loadMySchedule(true);">MY SCHEDULE</span> - <span onClick="showSettings();">SETTINGS<span></div>
+  <div id="bottomBox" style="width: 100%; height: 40px; font-size: 12px; position: fixed; left: 0px; bottom: 0px; background-color: #328b8c; color:#fff;  text-align:center; line-height:40px;"><span onClick="seeToday();">TODAY</span> - <span onClick="seeThisMonth();">THIS MONTH</span> <!--- <span onClick="loadMySchedule(true);">MY SCHEDULE</span> -->- <span onClick="showSettings();">SETTINGS<span></div>
   <div id="modal" style="display:none; position:fixed; left:0; top:0; width:100%; height:100%; z-index:1; overflow:auto; background-color:rgba(0,0,0,0.4);">
     <div style='background-color: #fefefe; margin: 10% auto; width: 80%; box-shadow: 2px 2px 5px #666;'>
       <div style="width: 100%; height: 40px; background-color: #328b8c; line-height: 40px; padding-left: 10px; padding-right: 10px; box-sizing: border-box; color: #555; font-weight:bold;"><span onClick="hideSettings();" style="float:right; font-weight:bold; cursor: pointer; color:#900;">X</span>SETTINGS</div>
@@ -45,7 +45,7 @@
         <input type="button" onClick="saveSettings()" value="Save changes"/>
         <span onClick="about();" style="float:right; font-size: 8pt; position:relative; top:10px;">About this app</span>
       </div>
-      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.5.2<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="send_message_to_sw('delete');">Force reload (BETA)</a><br><a href="?new=yes">Soft reload</a></div>
+      <div id="aboutBox" style="display:none; padding: 10px; text-align:center; border-top: 1px solid #333;">Congregation Schedule v0.6<br><br><span style="font-size: 8pt;">Code and design: Isak Ståhl<br>Design: Samuel Ståhl<span><br><a href="#" onclick="send_message_to_sw('delete');">Force reload (BETA)</a><br><a href="?new=yes">Soft reload</a></div>
       </div>
   </div>
 </body>

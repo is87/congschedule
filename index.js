@@ -218,7 +218,7 @@ function hideSettings(){
 
 var mc = new Hammer(monthBox);
 var mc2 = new Hammer(dayBox);
-var mc3 = new Hammer(scheduleBox);
+var mc3 = new Hammer(popupBox);
 
 //mc.add( new Hammer.Swipe({ direction: Hammer.DIRECTION_ALL, threshold: 10 }) );
 
@@ -241,11 +241,16 @@ mc2.on("swiperight", function(ev) {
 });
 
 mc3.on("swipeleft", function(ev) {
-    if(scheduleMode=="full")loadMySchedule(false);
+    //if(scheduleMode=="full")loadMySchedule(false);
+    var datum = new Date(thisYear, thisMonth, thisDay+1);
+    showDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
+
 });
 
 mc3.on("swiperight", function(ev) {
-    if(scheduleMode=="my")loadMySchedule(true);
+    //if(scheduleMode=="my")loadMySchedule(true);
+    var datum = new Date(thisYear, thisMonth, thisDay-1);
+    loadDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
 });
 
     //alert(decodeURIComponent(location.search));
