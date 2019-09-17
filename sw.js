@@ -15,6 +15,10 @@ self.addEventListener("activate", e => {
     self.clients.claim();
 })
 
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
+});
+
 self.addEventListener("fetch", async e => {
     const req = e.request;
     const url = new URL(req.url);

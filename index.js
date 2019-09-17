@@ -8,6 +8,10 @@ months = ["January", "February", "March", "April", "May", "June", "July", "Augus
       registerSW();
   });
 
+  function send_message_to_sw(msg){
+    navigator.serviceWorker.controller.postMessage(msg);
+}
+
   function loadJSON(){
     //var xmlhttp = new XMLHttpRequest();
     //var url = "https://is87.github.io/congschedule/db.json";
