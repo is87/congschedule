@@ -156,7 +156,7 @@ function hideSettings(){
       }
 
     }
-    if(hits==0)popupBox.innerHTML = "<div style='width:100%; text-align:left; background-color:#328b8c; opacity:0.7;'><div style='width:100%; padding: 5px; color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span><br><span style='font-weight:lighter;'>NO EVENTS THIS DAY</span></div>";
+    if(hits==0)popupBox.innerHTML = "<div style='width:100%; text-align:left; background-color:#328b8c; opacity:0.7;'><div style='width:100%; padding: 5px; color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span> <a style='color:white; text-decoration:none;' href='https://wol.jw.org/en/wol/dt/r1/lp-e/"+year+"/"+(month+1)+"/"+day+"' target='_blank'>&#9432;</a><br><span style='font-weight:lighter;'>NO EVENTS THIS DAY</span></div>";
     
   }
 
@@ -257,6 +257,10 @@ mc3.on("swiperight", function(ev) {
     //if(scheduleMode=="my")loadMySchedule(true);
     var datum = new Date(thisYear, thisMonth, thisDay-1);
     showDay(datum.getFullYear(), datum.getMonth(), datum.getDate());
+});
+
+mc3.on("swipedown", function(ev) {
+  hidePopup();
 });
 
     //alert(decodeURIComponent(location.search));
@@ -430,7 +434,7 @@ mc3.on("swiperight", function(ev) {
   }
   htmlString += "<div style='width:100%; text-align:left; "+colorString+" '><div style='width:100%; margin-bottom: 5px; padding: 5px; ";
   
-  htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span><br><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
+  htmlString += "color: #fff; box-sizing: border-box; font-weight: bold; font-size: 16px; overflow:hidden; text-align:center;'><span style='font-weight:lighter;'>"+dateText+"</span> <a style='color:white; text-decoration:none;' href='https://wol.jw.org/en/wol/dt/r1/lp-e/"+thisYear+"/"+(thisMonth+1)+"/"+thisDay+"' target='_blank'>&#9432;</a><br><span style='font-weight:lighter;'>" + eventTag.time + "</span> <span style='font-weight:bold;'>" + eventTag.type.toUpperCase() + "</span></div><div style='padding: 5px;'>";
   var items = eventTag.items;
   if(typeof eventTag.group !== 'undefined' && typeof eventTag.location !== 'undefined') htmlString += "<div style='font-size: 12px; text-align:center; padding-bottom:10px;'>"+eventTag.group+" - Location: "+eventTag.location+"</div>";
   htmlString += "<table style='font-size: 12px; width:100%;'>"
