@@ -480,6 +480,7 @@ mc3.on("swiperight", function(ev) {
     var da = new Date(d.getFullYear(), d.getMonth()+1, 0);
     var dagar = da.getDate();
     thisMonth = month;
+    thisYear = year;
 
     prevYear = d.getFullYear();
     prevMonth = d.getMonth()-1;

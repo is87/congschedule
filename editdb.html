@@ -65,8 +65,8 @@ function setView(nr){
 }
 
 function createItem(){
-      itemNr = (document.getElementById("newEvent").childElementCount-12)/3;
-      document.getElementById("newEvent").insertAdjacentHTML("beforeend","<input type='text' id='ia"+itemNr+"'/><input type='text' id='ib"+itemNr+"'/><br>");
+      itemNr = (document.getElementById("newEvent").childElementCount-12)/4;
+      document.getElementById("newEvent").insertAdjacentHTML("beforeend","<input type='text' id='ia"+itemNr+"'/><input type='text' id='ib"+itemNr+"'/><input type='text' id='ic"+itemNr+"'/><br>");
 }
 
 function newEvent(){
@@ -77,11 +77,13 @@ function newEvent(){
       if(document.getElementById("i4").value != "")ev.group = document.getElementById("i4").value;
       if(document.getElementById("i5").value != "")ev.location = document.getElementById("i5").value;
       ev.items = [];
-      itemLength = (document.getElementById("newEvent").childElementCount-12)/3;
+      itemLength = (document.getElementById("newEvent").childElementCount-12)/4;
+      console.log("Events: "+itemLength)
       for(i=0;i<itemLength;i++){
         ev2 = new Object();
         ev2.type = document.getElementById("ia"+i).value;
         ev2.name = document.getElementById("ib"+i).value;
+        if(document.getElementById("ic"+i).value != "")ev2.name2 = document.getElementById("ic"+i).value;
         ev.items.push(ev2);
       }
       place = findTimeSlot(ev.date+"T"+ev.time);
